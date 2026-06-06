@@ -1,3 +1,12 @@
-﻿<div style="text-align: center;">
-    <h2>Welcome to SportsStore</h2>
-</div>
+﻿@model IOrderedQueryable<Product>
+@foreach (var p in Model ?? Enumerable.Empty<Product>())
+    {
+    <div>
+        <h3>
+            @p.Name
+        </h3>
+        <h4>
+            @p.Price.ToString("c")
+        </h4>
+    </div>
+    }
